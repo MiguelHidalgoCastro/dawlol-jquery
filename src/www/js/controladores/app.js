@@ -28,29 +28,29 @@ class Controlador {
         //aqui cargaría el modelo
 
         /*Containers de los divs*/
-        this.divListaCRUD = document.getElementById('vistaListaCRUD')
-        this.divFormulario = document.getElementById('vistaFormulario')
+        this.divListaCRUD = $('#vistaListaCRUD')
+        this.divFormulario = $('#vistaFormulario')
 
 
         this.vistaListaCoches = new VistaLista(this, this.divListaCRUD)
         this.vistaFormulario = new VistaFormulario(this, this.divFormulario)
 
         /*Para ocultar titulo y botones del formulario */
-        this.tituloCrear = document.getElementById('tituloCrear')
-        this.tituloModificar = document.getElementById('tituloModificar')
-        this.tituloConsultar = document.getElementById('tituloConsultar')
+        this.tituloCrear = $('#tituloCrear')
+        this.tituloModificar = $('#tituloModificar')
+        this.tituloConsultar = $('#tituloConsultar')
 
-        this.btnAceptar = document.getElementById('btnAceptar')
-        this.btnModificar = document.getElementById('btnModificar')
+        this.btnAceptar = $('#btnAceptar')
+        this.btnModificar = $('#btnModificar')
 
-        this.imagenNav = document.getElementById('imgNav')
-        this.imagenNav.onclick = this.recargar.bind(this)
+        this.imagenNav = $('#imgNav').on('click', this.recargar.bind(this))
+
 
         /*Mensajes */
-        this.divMensajes = document.getElementById('mensajes')
-        this.mensajeCrear = document.getElementById('mensajeCrear')
-        this.mensajeModificar = document.getElementById('mensajeModificar')
-        this.mensajeBorrar = document.getElementById('mensajeBorrar')
+        this.divMensajes = $('#mensajes')
+        this.mensajeCrear = $('#mensajeCrear')
+        this.mensajeModificar = $('#mensajeModificar')
+        this.mensajeBorrar = $('#mensajeBorrar')
 
         //Cargamos la vista principal
         this.mostrarIndex()
@@ -85,9 +85,9 @@ class Controlador {
     ocultarTodo() {
         this.vistaListaCoches.mostrar(false)
         this.vistaFormulario.mostrar(false)
-        this.mensajeCrear.style.display = 'none'
-        this.mensajeModificar.style.display = 'none'
-        this.mensajeBorrar.style.display = 'none'
+        this.mensajeCrear.css({ 'display': 'none' })
+        this.mensajeBorrar.css({ 'display': 'none' })
+        this.mensajeModificar.css({ 'display': 'none' })
     }
 
     /**
@@ -96,12 +96,12 @@ class Controlador {
     mostrarFormularioCrear() {
         this.vistaListaCoches.mostrar(false)
         this.vistaFormulario.mostrar(true)
-        this.btnModificar.style.display = 'none'
-        this.tituloModificar.style.display = 'none'
-        this.btnAceptar.style.display = 'inline'
-        this.tituloCrear.style.display = 'block'
+        this.btnModificar.css({ 'display': 'none' })
+        this.tituloModificar.css({ 'display': 'none' })
+        this.tituloConsultar.css({ 'display': 'none' })
+        this.btnAceptar.css({ 'display': 'inline' })
+        this.tituloCrear.css({ 'display': 'block' })
         this.vistaFormulario.cambiarEstadoCampos(false)
-        this.tituloConsultar.style.display = 'none'
     }
     /**
      * Para mostrar los componentes necesarios para modificar un coche
@@ -109,10 +109,11 @@ class Controlador {
     mostrarFormularioModificar() {
         this.vistaListaCoches.mostrar(false)
         this.vistaFormulario.mostrar(true)
-        this.btnModificar.style.display = 'inline'
-        this.tituloModificar.style.display = 'block'
-        this.btnAceptar.style.display = 'none'
-        this.tituloCrear.style.display = 'none'
+        this.btnModificar.css({ 'display': 'inline' })
+        this.tituloModificar.css({ 'display': 'block' })
+        this.btnAceptar.css({ 'display': 'none' })
+        this.tituloCrear.css({ 'display': 'none' })
+        this.tituloConsultar.css({ 'display': 'none' })
     }
     /**
      * Para mostrar los componentes necesarios para consultar un coche
@@ -120,11 +121,11 @@ class Controlador {
     mostrarConsultar() {
         this.vistaListaCoches.mostrar(false)
         this.vistaFormulario.mostrar(true)
-        this.btnModificar.style.display = 'none'
-        this.tituloModificar.style.display = 'none'
-        this.btnAceptar.style.display = 'none'
-        this.tituloCrear.style.display = 'none'
-
+        this.btnModificar.css({ 'display': 'none' })
+        this.tituloModificar.css({ 'display': 'none' })
+        this.btnAceptar.css({ 'display': 'none' })
+        this.tituloCrear.css({ 'display': 'none' })
+        this.tituloModificar.css({ 'display': 'none' })
     }
 
     /**
@@ -139,7 +140,7 @@ class Controlador {
      */
     insertarCocheOK() {
         this.ocultarTodo()
-        this.mensajeCrear.style.display = 'block'
+        this.mensajeCrear.css('display','block')
         setTimeout(this.recargar.bind(this), 3000)
     }
     /**
@@ -156,7 +157,7 @@ class Controlador {
     insertarCochePorIDOK() {
         this.ocultarTodo()
         this.vistaFormulario.borrarCampos()
-        this.mensajeModificar.style.display = 'block'
+        this.mensajeModificar.css('display','block')
         setTimeout(this.recargar.bind(this), 3000)
     }
     /**
@@ -185,7 +186,7 @@ class Controlador {
      */
     borrarOK() {
         this.ocultarTodo()
-        this.mensajeBorrar.style.display = 'block'
+        this.mensajeBorrar.css('display','block')
         setTimeout(this.recargar.bind(this), 3000)
     }
     /**

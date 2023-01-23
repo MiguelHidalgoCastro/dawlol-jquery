@@ -146,7 +146,6 @@ export class VistaFormulario extends Vista {
     back() {
         this.borrarCampos()
         this.controlador.back()
-        this.controlador.recargar()
     }
     /**
      * Función para cargar los datos del coche que se desea modificar

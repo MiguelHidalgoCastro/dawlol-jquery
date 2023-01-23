@@ -17,9 +17,9 @@ export class Vista {
      */
     mostrar(ver) {
         if (ver)
-            this.div.style.display = 'block'
+            this.div.css({'display':'block'})
         else
-            this.div.style.display = 'none'
+            this.div.css({'display':'none'})
 
     }
 }
