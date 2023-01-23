@@ -1,0 +1,16 @@
+/*HEADER*/
+#navbar {
+    background: #b0b2b469;
+}
+
+#navbar a {
+    color: white !important;
+}
+
+body {
+    min-width: 300px;
+}
+
+div#vistaCrearCRUD, div#vistaModificarCRUD, div#vistaListaCRUD {
+    display: none;
+}

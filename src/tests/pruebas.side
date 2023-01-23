@@ -1,0 +1,422 @@
+{
+  "id": "3bdde3b8-f4fb-4527-b1db-6c4488409c74",
+  "version": "2.0",
+  "name": "pruebas",
+  "url": "https://miguelhidalgocastro.github.io",
+  "tests": [{
+    "id": "b11726ee-225c-4db3-85c9-3016a5bd6534",
+    "name": "Crear, buscar, modifcar, consultar y borrar",
+    "commands": [{
+      "id": "c7e55aa7-48ef-4466-85fe-2fa74c5f84b7",
+      "comment": "",
+      "command": "open",
+      "target": "/dawlol/src/www/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c5c41d0f-c2af-4737-8e17-2676446c489b",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x840",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "23fc570e-cc11-458b-bd24-1dee86057ac7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bi-plus-square",
+      "targets": [
+        ["css=.bi-plus-square", "css:finder"],
+        ["xpath=//span[@id='addCoche']/em", "xpath:idRelative"],
+        ["xpath=//div[4]/span/em", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9a3ba308-cb52-4bcc-b0ff-66ef54e62899",
+      "comment": "",
+      "command": "click",
+      "target": "id=imarca",
+      "targets": [
+        ["id=imarca", "id"],
+        ["css=#imarca", "css:finder"],
+        ["xpath=//input[@id='imarca']", "xpath:attributes"],
+        ["xpath=//div[@id='vistaFormulario']/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4dbb6d14-37b9-49fd-9a0b-4ab39e5b5dbb",
+      "comment": "",
+      "command": "type",
+      "target": "id=imarca",
+      "targets": [
+        ["id=imarca", "id"],
+        ["css=#imarca", "css:finder"],
+        ["xpath=//input[@id='imarca']", "xpath:attributes"],
+        ["xpath=//div[@id='vistaFormulario']/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Nissan"
+    }, {
+      "id": "7224fe69-c483-4b95-be43-2602acd7798d",
+      "comment": "",
+      "command": "type",
+      "target": "id=imodelo",
+      "targets": [
+        ["id=imodelo", "id"],
+        ["css=#imodelo", "css:finder"],
+        ["xpath=//input[@id='imodelo']", "xpath:attributes"],
+        ["xpath=//div[@id='vistaFormulario']/div[2]/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "GTR"
+    }, {
+      "id": "419c5dc4-c77e-4316-8c2d-5272fdaf1a52",
+      "comment": "",
+      "command": "click",
+      "target": "id=ifecha",
+      "targets": [
+        ["id=ifecha", "id"],
+        ["css=#ifecha", "css:finder"],
+        ["xpath=//input[@id='ifecha']", "xpath:attributes"],
+        ["xpath=//div[@id='vistaFormulario']/div[2]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "df9f71f4-6ba3-4789-802a-173e1d1a3d16",
+      "comment": "",
+      "command": "click",
+      "target": "id=ifecha",
+      "targets": [
+        ["id=ifecha", "id"],
+        ["css=#ifecha", "css:finder"],
+        ["xpath=//input[@id='ifecha']", "xpath:attributes"],
+        ["xpath=//div[@id='vistaFormulario']/div[2]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "62962188-ed10-4439-9954-cb431ed1b577",
+      "comment": "",
+      "command": "type",
+      "target": "id=ifecha",
+      "targets": [
+        ["id=ifecha", "id"],
+        ["css=#ifecha", "css:finder"],
+        ["xpath=//input[@id='ifecha']", "xpath:attributes"],
+        ["xpath=//div[@id='vistaFormulario']/div[2]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "2023-01-12"
+    }, {
+      "id": "ada8bbae-9425-4dec-b4c0-f2f9e0046f74",
+      "comment": "",
+      "command": "click",
+      "target": "id=enFab",
+      "targets": [
+        ["id=enFab", "id"],
+        ["css=#enFab", "css:finder"],
+        ["xpath=//select[@id='enFab']", "xpath:attributes"],
+        ["xpath=//div[@id='vistaFormulario']/div[2]/div[2]/div[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b52f96d0-bc3b-4ada-8b49-5086974de1ed",
+      "comment": "",
+      "command": "click",
+      "target": "css=.form-check:nth-child(2)",
+      "targets": [
+        ["css=.form-check:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='vistaFormulario']/div[2]/div[3]/div/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "67d78eb1-3d93-4aa1-a7d2-d43c1f2f6ea2",
+      "comment": "",
+      "command": "click",
+      "target": "id=extra1",
+      "targets": [
+        ["id=extra1", "id"],
+        ["css=#extra1", "css:finder"],
+        ["xpath=//input[@id='extra1']", "xpath:attributes"],
+        ["xpath=//div[@id='vistaFormulario']/div[2]/div[3]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1fbcdd08-7e0a-48d4-88c9-b9d9423ec95d",
+      "comment": "",
+      "command": "click",
+      "target": "id=extra2",
+      "targets": [
+        ["id=extra2", "id"],
+        ["css=#extra2", "css:finder"],
+        ["xpath=//input[@id='extra2']", "xpath:attributes"],
+        ["xpath=//div[@id='vistaFormulario']/div[2]/div[3]/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3f3e30ef-c8f6-40f9-b4ac-28c4c2b5a958",
+      "comment": "",
+      "command": "click",
+      "target": "css=.row > .form-group",
+      "targets": [
+        ["css=.row > .form-group", "css:finder"],
+        ["xpath=//div[@id='vistaFormulario']/div[2]/div[3]/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0d80e3ae-4d0e-4d69-b4d5-6d183a49d76f",
+      "comment": "",
+      "command": "click",
+      "target": "id=extra4",
+      "targets": [
+        ["id=extra4", "id"],
+        ["css=#extra4", "css:finder"],
+        ["xpath=//input[@id='extra4']", "xpath:attributes"],
+        ["xpath=//div[@id='vistaFormulario']/div[2]/div[3]/div/div[4]/input", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "01c03f20-302e-4c0e-be2e-8ab5e7000e59",
+      "comment": "",
+      "command": "click",
+      "target": "id=extra5",
+      "targets": [
+        ["id=extra5", "id"],
+        ["css=#extra5", "css:finder"],
+        ["xpath=//input[@id='extra5']", "xpath:attributes"],
+        ["xpath=//div[@id='vistaFormulario']/div[2]/div[3]/div/div[5]/input", "xpath:idRelative"],
+        ["xpath=//div[5]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8a85a274-fa23-4105-a933-ba71afb71798",
+      "comment": "",
+      "command": "click",
+      "target": "id=extra3",
+      "targets": [
+        ["id=extra3", "id"],
+        ["css=#extra3", "css:finder"],
+        ["xpath=//input[@id='extra3']", "xpath:attributes"],
+        ["xpath=//div[@id='vistaFormulario']/div[2]/div[3]/div/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a32d175f-fea4-43f9-a53a-1015ef05a189",
+      "comment": "",
+      "command": "click",
+      "target": "id=textDescripcion",
+      "targets": [
+        ["id=textDescripcion", "id"],
+        ["css=#textDescripcion", "css:finder"],
+        ["xpath=//textarea[@id='textDescripcion']", "xpath:attributes"],
+        ["xpath=//div[@id='vistaFormulario']/div[2]/div[3]/div[2]/div/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1ad0a13a-938f-4daf-b278-984bb432d667",
+      "comment": "",
+      "command": "type",
+      "target": "id=textDescripcion",
+      "targets": [
+        ["id=textDescripcion", "id"],
+        ["css=#textDescripcion", "css:finder"],
+        ["xpath=//textarea[@id='textDescripcion']", "xpath:attributes"],
+        ["xpath=//div[@id='vistaFormulario']/div[2]/div[3]/div[2]/div/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Nissan GTR"
+    }, {
+      "id": "e6eacb00-3890-4f0b-b8eb-150d7800ab72",
+      "comment": "",
+      "command": "click",
+      "target": "id=btnAceptar",
+      "targets": [
+        ["id=btnAceptar", "id"],
+        ["css=#btnAceptar", "css:finder"],
+        ["xpath=//button[@id='btnAceptar']", "xpath:attributes"],
+        ["xpath=//div[@id='vistaFormulario']/div[2]/div[5]/div/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Aceptar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "793c88fc-97c9-47cc-ba00-0c37354bf6cf",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=(//img[@alt='imagen'])[2]",
+      "targets": [
+        ["xpath=(//img[@alt='imagen'])[2]", "xpath:img"],
+        ["xpath=(//div[@id='coche2']/div/img)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "53c323a3-eb90-4902-abb9-0fdab8833e3f",
+      "comment": "",
+      "command": "click",
+      "target": "id=btnCancelar",
+      "targets": [
+        ["id=btnCancelar", "id"],
+        ["css=#btnCancelar", "css:finder"],
+        ["xpath=//button[@id='btnCancelar']", "xpath:attributes"],
+        ["xpath=//div[@id='vistaFormulario']/div[2]/div[5]/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Atrás')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3cb4510c-fe93-476d-8bca-c787a33a6f5e",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=(//span[@id='modCoche']/em)[3]",
+      "targets": [
+        ["xpath=(//span[@id='modCoche']/em)[3]", "xpath:idRelative"],
+        ["xpath=//div[3]/div[4]/div/span/em", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "768452f7-787a-4659-928f-206d572b3486",
+      "comment": "",
+      "command": "click",
+      "target": "id=textDescripcion",
+      "targets": [
+        ["id=textDescripcion", "id"],
+        ["css=#textDescripcion", "css:finder"],
+        ["xpath=//textarea[@id='textDescripcion']", "xpath:attributes"],
+        ["xpath=//div[@id='vistaFormulario']/div[2]/div[3]/div[2]/div/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3db64c42-3d75-4d81-b12d-b5c394f71b46",
+      "comment": "",
+      "command": "type",
+      "target": "id=textDescripcion",
+      "targets": [
+        ["id=textDescripcion", "id"],
+        ["css=#textDescripcion", "css:finder"],
+        ["xpath=//textarea[@id='textDescripcion']", "xpath:attributes"],
+        ["xpath=//div[@id='vistaFormulario']/div[2]/div[3]/div[2]/div/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "No descripción NUEVA"
+    }, {
+      "id": "46cbee05-250c-4ce7-aecc-1047e8fa9a02",
+      "comment": "",
+      "command": "click",
+      "target": "id=btnModificar",
+      "targets": [
+        ["id=btnModificar", "id"],
+        ["css=#btnModificar", "css:finder"],
+        ["xpath=//button[@id='btnModificar']", "xpath:attributes"],
+        ["xpath=//div[@id='vistaFormulario']/div[2]/div[5]/div/button[3]", "xpath:idRelative"],
+        ["xpath=//button[3]", "xpath:position"],
+        ["xpath=//button[contains(.,'Modificar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "53bb3223-87d8-48c3-87b3-af12efff1134",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=(//img[@alt='imagen'])[3]",
+      "targets": [
+        ["xpath=(//img[@alt='imagen'])[3]", "xpath:img"],
+        ["xpath=(//div[@id='coche2']/div/img)[3]", "xpath:idRelative"],
+        ["xpath=//div[3]/div/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "25e05b9b-c662-45e6-bd93-ac662c2e5998",
+      "comment": "",
+      "command": "click",
+      "target": "id=btnCancelar",
+      "targets": [
+        ["id=btnCancelar", "id"],
+        ["css=#btnCancelar", "css:finder"],
+        ["xpath=//button[@id='btnCancelar']", "xpath:attributes"],
+        ["xpath=//div[@id='vistaFormulario']/div[2]/div[5]/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Atrás')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5c2890e6-05a5-4d33-bf56-8e67dc436538",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=(//span[@id='delCoche']/em)[4]",
+      "targets": [
+        ["xpath=(//span[@id='delCoche']/em)[4]", "xpath:idRelative"],
+        ["xpath=//div[4]/div[4]/div[2]/span/em", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7d95d624-3054-4871-b7ec-1e8f79ac3ed3",
+      "comment": "",
+      "command": "click",
+      "target": "id=enFabq",
+      "targets": [
+        ["id=enFabq", "id"],
+        ["css=#enFabq", "css:finder"],
+        ["xpath=//select[@id='enFabq']", "xpath:attributes"],
+        ["xpath=//div[@id='vistaListaCRUD']/div[2]/div[3]/select", "xpath:idRelative"],
+        ["xpath=//div[3]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9c5d9d5c-ea87-4143-9e0e-a65001f3aa28",
+      "comment": "",
+      "command": "select",
+      "target": "id=enFabq",
+      "targets": [],
+      "value": "label=Ford"
+    }, {
+      "id": "b070c162-991e-4e65-bd4b-6d42790824fb",
+      "comment": "",
+      "command": "click",
+      "target": "id=btnBuscar",
+      "targets": [
+        ["id=btnBuscar", "id"],
+        ["css=#btnBuscar", "css:finder"],
+        ["xpath=//button[@id='btnBuscar']", "xpath:attributes"],
+        ["xpath=//div[@id='vistaListaCRUD']/div[2]/div[4]/button", "xpath:idRelative"],
+        ["xpath=//div[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Buscar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "74bd76be-8e27-4430-8642-1babf0c23af0",
+      "comment": "",
+      "command": "click",
+      "target": "id=imgNav",
+      "targets": [
+        ["id=imgNav", "id"],
+        ["css=#imgNav", "css:finder"],
+        ["xpath=//img[@alt='logo de la empresa']", "xpath:img"],
+        ["xpath=//img[@id='imgNav']", "xpath:attributes"],
+        ["xpath=//div[@id='navbar']/img", "xpath:idRelative"],
+        ["xpath=//div[2]/img", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "1409580b-a1b5-4bd8-86fa-ec8f69922a7f",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["https://miguelhidalgocastro.github.io/"],
+  "plugins": []
+}
