@@ -14,8 +14,11 @@ class Controlador {
      * Carga el método iniciar al cargar la página
      */
     constructor() {
-        this.modelo = new Modelo(this)
-        window.onload = this.iniciar.bind(this)
+
+        /*OJO */
+        //window.onload = this.iniciar.bind(this)
+        $(document).ready(this.iniciar.bind(this))
+
     }
     /**
      * Inicia la aplicación
@@ -52,8 +55,8 @@ class Controlador {
         //Cargamos la vista principal
         this.mostrarIndex()
 
-        //Cargamos la lista inicial
-        this.buscar()
+        //Lo pongo en el callback el buscar para esperar cuando cargue el modelo
+        this.modelo = new Modelo(this, this.buscar.bind(this))
 
     }
     /**

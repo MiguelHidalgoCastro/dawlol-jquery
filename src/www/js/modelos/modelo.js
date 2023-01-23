@@ -11,9 +11,9 @@ export class Modelo {
      * Constructor del modelo, inicializa la conexion a la bbdd
      * @param {Constrolador} controlador 
      */
-    constructor(controlador) {
+    constructor(controlador, callback) {
         this.controlador = controlador
-        this.idb = new Idb()
+        this.idb = new Idb(callback)
     }
     /**
      * Función que le pasa los datos al Idb para que inserte el objeto en la bbdd

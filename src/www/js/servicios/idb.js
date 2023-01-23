@@ -11,14 +11,18 @@ export class Idb {
     /**
      * Creamos la bbdd si no existe, y la guarda en this.conexion
      */
-    constructor() {
+    constructor(callback) {
         const peticion = indexedDB.open('bdnueva', 2)
         peticion.onerror = evento => { throw 'Error al conectar indexedDB' }
         peticion.onupgradeneeded = evento => {
             this.conexion = evento.target.result
             this.crear()
+            callback()
         }
-        peticion.onsuccess = evento => { this.conexion = evento.target.result }
+        peticion.onsuccess = evento => {
+            this.conexion = evento.target.result;
+            callback()
+        }
     }
     /**
      * Función que crea la tabla para los datos 
@@ -36,7 +40,6 @@ export class Idb {
         peticion.onerror = (evento) => { console.log('No se ha podido agregar el coche a la bbdd'); }
         peticion.onsuccess = (evento) => {
             objeto.id = peticion.result
-            console.log(objeto.id)
             callback()
         }
     }

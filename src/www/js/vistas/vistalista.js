@@ -17,28 +17,24 @@ export class VistaLista extends Vista {
         this.controlador = controlador
 
         /*Containers*/
-        this.divListarCRUD = document.getElementById('vistaListaCRUD')
-        this.divCrearCRUD = document.getElementById('vistaCrearCRUD')
-
+        this.divListarCRUD = $('#vistaListaCRUD')
+        this.divCrearCRUD = $('#vistaCrearCRUD')
 
         /*Nodo enganche lista */
-        this.nodoLista = document.getElementById('listaCoches')
+        this.nodoLista = $('#listaCoches')
 
         /*Localizo botones*/
-        this.btnCrear = document.getElementById('addCoche')
-        this.btnCrear.onclick = this.pulsarCrear.bind(this)
+        this.btnCrear = $('#addCoche')
+        this.btnBorrar = $('#delCoche')
+        this.btnModificarCoche = $('#modCoche')
+        this.btnBuscar = $('#btnBuscar')
 
-        this.btnBorrar = document.getElementById('delCoche')
-        this.btnModificarCoche = document.getElementById('modCoche')
+        /*SELECT */
+        this.selectMarca = $('#enFabq')
 
-
-
-        this.btnBuscar = document.getElementById('btnBuscar')
-        this.btnBuscar.onclick = this.pulsarBuscar.bind(this)
-
-        this.selectMarca = document.getElementById('enFabq')
-
-
+        /*EVENTOS */
+        this.btnCrear.on('click', this.pulsarCrear.bind(this))
+        this.btnBuscar.on('click', this.pulsarBuscar.bind(this))
     }
     /**
      * Función que carga la lista de objetos en la web
@@ -48,110 +44,71 @@ export class VistaLista extends Vista {
      */
     cargar(lista) {
         /* Todo esto lo tengo que pasar a la vista */
-        this.nodoLista.textContent = ''
+        this.nodoLista.text('')
+
 
         lista.forEach(element => {
-            let div1 = document.createElement('div')
-            div1.setAttribute('class', 'col-xl-3 col-md-4 col-sm-10 ms-sm-5 border mb-4')
-            div1.setAttribute('id', 'coche2')
+            let divN1 = $('<div></div>').addClass('col-xl-3 col-md-4 col-sm-10 ms-sm-5 border mb-4').attr('id', 'coche2')
+            let divN2 = $('<div></div>').addClass('row border')
+            let divN3 = $('<div></div>').addClass('row border')
+            let divN4 = $('<div></div>').addClass('row border')
+            let divN5 = $('<div></div>').addClass('row border text-center')
+            let divN6 = $('<div></div>').addClass('col border')
+            let divN7 = $('<div></div>').addClass('col border')
 
-            let div2 = document.createElement('div')
-            div2.setAttribute('class', 'row border')
+            let imgN1 = $('<img>').attr('src', element.imagen).attr('alt', 'imagen coche')
+            imgN1.css({
+                "width": "100%",
+                "height": "auto"
+            })
+            // imgN1.click(this.consultarCoche.bind(this, element.id))
+            imgN1.on('click', this.consultarCoche.bind(this, element.id))
 
-            let img = document.createElement('img')
-            img.src = element.imagen //
-            img.alt = 'imagen'
-            img.style.width = '100%'
-            img.style.height = 'auto'
-            img.onclick = this.consultarCoche.bind(this, element.id)
+            let h51N = $('<h5></h5>').addClass('fw-bold text-center').text(element.marca)
+            let h52N = $('<h5></h5>').addClass('fw-bold text-center').text(element.modelo)
 
-            let div3 = document.createElement('div')
-            div3.setAttribute('class', 'row border')
+            let spanModN = $('<span></span>').addClass('link-dark').attr('id', 'modCoche').on('click', this.pulsarModificar.bind(this, element.id))
+            let emModN = $('<em></em>').addClass('bi bi-pencil-square').css({ 'fontSize': '3rem' })
 
-            let h51 = document.createElement('h5')
-            h51.setAttribute('class', 'fw-bold text-center')
-            h51.textContent = element.marca //
+            let spanDelN = $('<span></span>').addClass('link-dark').attr('id', 'modCoche').on('click', this.pulsarBorrar.bind(this, element.id))
+            let emDelN = $('<em></em>').addClass('bi bi-trash-fill').css({ 'fontSize': '3rem' })
 
-            let div4 = document.createElement('div')
-            div4.setAttribute('class', 'row border')
+            this.nodoLista.append(divN1[0])
+            divN1.append(divN2)
+            divN2.append(imgN1)
+            divN1.append(divN3)
+            divN3.append(h51N)
+            divN1.append(divN4)
+            divN4.append(h52N)
 
-            let h52 = document.createElement('h5')
-            h52.setAttribute('class', 'fw-bold text-center')
-            h52.textContent = element.modelo //
+            divN1.append(divN5)
+            divN5.append(divN6)
+            divN6.append(spanModN)
+            spanModN.append(emModN)
 
-            let div5 = document.createElement('div')
-            div5.setAttribute('class', 'row border text-center')
+            divN5.append(divN7)
+            divN7.append(spanDelN)
+            spanDelN.append(emDelN)
 
-            let div6 = document.createElement('div')
-            div6.setAttribute('class', 'col border')
-
-            let spanMod = document.createElement('span')
-            spanMod.setAttribute('id', 'modCoche')
-            spanMod.setAttribute('class', 'link-dark')
-            spanMod.onclick = this.pulsarModificar.bind(this, element.id)
-
-            let emMod = document.createElement('em')
-            emMod.setAttribute('class', 'bi bi-pencil-square')
-            emMod.style.fontSize = '3rem'
-
-            let div7 = document.createElement('div')
-            div7.setAttribute('class', 'col border')
-
-            let spanDel = document.createElement('span')
-            spanDel.setAttribute('id', 'delCoche')
-            spanDel.setAttribute('class', 'link-dark')
-            spanDel.onclick = this.pulsarBorrar.bind(this, element.id)
-
-            let emDel = document.createElement('em')
-            emDel.setAttribute('class', 'bi bi-trash-fill')
-            emDel.style.fontSize = '3rem'
-
-            div1.appendChild(div2)
-            div2.appendChild(img)
-            div1.appendChild(div3)
-            div3.appendChild(h51)
-            div1.appendChild(div4)
-            div4.appendChild(h52)
-
-            div1.appendChild(div5)
-            div5.appendChild(div6)
-            div6.appendChild(spanMod)
-            spanMod.appendChild(emMod)
-            div5.appendChild(div7)
-            div7.appendChild(spanDel)
-            spanDel.appendChild(emDel)
-
-            this.nodoLista.appendChild(div1)
-
-        });
+        })
 
         /*Boton add*/
-        let divCrear = document.createElement('div')
-        divCrear.setAttribute('class', 'col-xl-3 col-md-4 col-sm-10 ms-sm-5 border mb-4')
-        divCrear.style.display = 'flex'
-        divCrear.style.alignItems = 'center'
-        divCrear.style.justifyContent = 'center'
-
-        let spanAdd = document.createElement('span')
-        spanAdd.setAttribute('id', 'addCoche')
-        spanAdd.setAttribute('class', 'link-dark')
-
-        let emAdd = document.createElement('em')
-        emAdd.setAttribute('class', 'bi bi-plus-square')
-        emAdd.style.fontSize = '3rem'
-        emAdd.onclick = this.pulsarCrear.bind(this)
-
-        spanAdd.appendChild(emAdd)
-        divCrear.appendChild(spanAdd)
-        this.nodoLista.appendChild(divCrear)
-
-
+        let divCrear = $('<div></div>').addClass('col-xl-3 col-md-4 col-sm-10 ms-sm-5 border mb-4').css({
+            'display': 'flex',
+            'alignItems': 'center',
+            'justifyContent': 'center'
+        })
+        let spanAdd = $('<span></span>').attr('id', 'addCoche').addClass('link-dark')
+        let emAdd = $('<em></em>').addClass('bi bi-plus-square').css({ 'fontSize': '3rem' }).on('click', this.pulsarCrear.bind(this))
+        spanAdd.append(emAdd)
+        divCrear.append(spanAdd)
+        this.nodoLista.append(divCrear)
     }
+
     /**
      * Función que le manda al controlador lo que el modelo tiene que buscar en la bbdd
      * En éste caso, son todos los objetos
      */
-
     mostrarCoches() {
         this.controlador.buscar()
     }
@@ -162,14 +119,15 @@ export class VistaLista extends Vista {
      */
     pulsarCrear() {
         this.controlador.mostrarFormularioCrear()
-
     }
+
     /**
      *  Le pido al controlador que muestre el formulario de modificar
      */
     pulsarModificar(id) {
         this.controlador.buscarPorID(id, true)
     }
+
     /**
      * Función que le manda el id del elemento al controlador para buscarlo en la bbdd y borrarlo
      * @param {int} id 
@@ -177,6 +135,7 @@ export class VistaLista extends Vista {
     pulsarBorrar(id) {
         this.controlador.borrar(id)
     }
+
     /**
      * Función que le manda al controlador lo que el modelo tiene que buscar en la bbdd
      * En éste caso trae las coincidencias de las marcas 
@@ -184,6 +143,7 @@ export class VistaLista extends Vista {
     pulsarBuscar() {
         this.controlador.buscar(this.selectMarca.value)
     }
+    
     /**
      * Función que le manda el id al controlador para buscarlo en la bbdd
      * @param {int} id 
