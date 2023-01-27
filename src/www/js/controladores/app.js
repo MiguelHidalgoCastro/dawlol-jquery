@@ -140,7 +140,7 @@ class Controlador {
      */
     insertarCocheOK() {
         this.ocultarTodo()
-        this.mensajeCrear.css('display','block')
+        this.mensajeCrear.css('display', 'block')
         setTimeout(this.recargar.bind(this), 3000)
     }
     /**
@@ -157,7 +157,7 @@ class Controlador {
     insertarCochePorIDOK() {
         this.ocultarTodo()
         this.vistaFormulario.borrarCampos()
-        this.mensajeModificar.css('display','block')
+        this.mensajeModificar.css('display', 'block')
         setTimeout(this.recargar.bind(this), 3000)
     }
     /**
@@ -165,14 +165,16 @@ class Controlador {
      * @param {string} marca 
      */
     buscar(marca) {
-        this.modelo.buscar(marca, this.buscarOK.bind(this))
+        this.modelo.buscar(null, this.buscarOK.bind(this))
     }
     /**
      * Función de callback que le da a la vista la lista de coches de la coincidencia de búsqueda
+     * Cuando acaba, avisa a leer marcas del idb
      * @param {Array} lista 
      */
     buscarOK(lista) {
         this.vistaListaCoches.cargar(lista)
+        this.modelo.leerFicheroJSON()
     }
     /**
      *  Función que pasa el dato del id del coche al modelo para borrarlo
@@ -186,7 +188,7 @@ class Controlador {
      */
     borrarOK() {
         this.ocultarTodo()
-        this.mensajeBorrar.css('display','block')
+        this.mensajeBorrar.css('display', 'block')
         setTimeout(this.recargar.bind(this), 3000)
     }
     /**
@@ -221,6 +223,7 @@ class Controlador {
     }
 
 
+    
 }
 
 const app = new Controlador()

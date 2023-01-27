@@ -1,0 +1,67 @@
+[
+    {
+        "id": 0,
+        "marca": "Seat",
+        "modelo": "Ibiza"
+    },
+    {
+        "id": 1,
+        "marca": "Seat",
+        "modelo": "Leon"
+    },
+    {
+        "id": 2,
+        "marca": "Seat",
+        "modelo": "Exeo"
+    },
+    {
+        "id": 3,
+        "marca": "Audi",
+        "modelo": "A3"
+    },
+    {
+        "id": 4,
+        "marca": "Audi",
+        "modelo": "A4"
+    },
+    {
+        "id": 5,
+        "marca": "Audi",
+        "modelo": "A5"
+    },
+    {
+        "id": 6,
+        "marca": "Nissan",
+        "modelo": "GTR"
+    },
+    {
+        "id": 7,
+        "marca": "Volkswagen",
+        "modelo": "Golf"
+    },
+    {
+        "id": 8,
+        "marca": "Volkswagen",
+        "modelo": "Passat"
+    },
+    {
+        "id": 9,
+        "marca": "Volkswagen",
+        "modelo": "Caddy"
+    },
+    {
+        "id": 10,
+        "marca": "Subaru",
+        "modelo": "Impreza"
+    },
+    {
+        "id": 11,
+        "marca": "Mercedes",
+        "modelo": "CLA"
+    },
+    {
+        "id": 12,
+        "marca": "Cupra",
+        "modelo": "Ateca"
+    }
+]

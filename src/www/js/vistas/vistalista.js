@@ -35,6 +35,9 @@ export class VistaLista extends Vista {
         /*EVENTOS */
         this.btnCrear.on('click', this.pulsarCrear.bind(this))
         this.btnBuscar.on('click', this.pulsarBuscar.bind(this))
+
+
+        this.graficoD3JS()
     }
     /**
      * Función que carga la lista de objetos en la web
@@ -143,12 +146,30 @@ export class VistaLista extends Vista {
     pulsarBuscar() {
         this.controlador.buscar(this.selectMarca.value)
     }
-    
+
     /**
      * Función que le manda el id al controlador para buscarlo en la bbdd
      * @param {int} id 
      */
     consultarCoche(id) {
         this.controlador.buscarPorID(id, false)
+    }
+    /**
+     * Gráfico con la librería D3JS
+     */
+    graficoD3JS() {
+        var datos = [150, 235, 250, 182, 225, 175];
+        var config = { columnWidth: 45, columnGap: 5, margin: 10, height: 300 };
+
+        d3.select("svg")
+            .selectAll("rect")
+            .data(datos)
+            .enter().append("rect")
+            .attr("width", config.columnWidth)
+            .attr("x", function (d, i) {
+                return config.margin + i * (config.columnWidth + config.columnGap)
+            })
+            .attr("y", function (d, i) { return config.height - d })
+            .attr("height", function (d, i) { return d });
     }
 }

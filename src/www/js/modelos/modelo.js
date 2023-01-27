@@ -56,4 +56,11 @@ export class Modelo {
     insertarCochePorID(id, coche, callback) {
         this.idb.insertarCochePorID(id, coche, callback)
     }
+    /**
+     * Funcion que llama al leerFicheroJSON al acabar de leer los coches de la bbdd
+     * @param {Function} callback 
+     */
+    leerFicheroJSON(callback) {
+        this.idb.leerFicheroJSON(callback)
+    }
 }

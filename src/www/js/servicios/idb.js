@@ -12,12 +12,13 @@ export class Idb {
      * Creamos la bbdd si no existe, y la guarda en this.conexion
      */
     constructor(callback) {
-        const peticion = indexedDB.open('bdnueva', 2)
+        //this.datos = null
+        const peticion = indexedDB.open('bddawlol', 1)
         peticion.onerror = evento => { throw 'Error al conectar indexedDB' }
         peticion.onupgradeneeded = evento => {
             this.conexion = evento.target.result
             this.crear()
-            callback()
+            //  callback()
         }
         peticion.onsuccess = evento => {
             this.conexion = evento.target.result;
@@ -29,6 +30,7 @@ export class Idb {
      */
     crear() {
         const tabla = this.conexion.createObjectStore('tabla1', { autoIncrement: true })
+        const tabla2 = this.conexion.createObjectStore('tabla2', { keyPath: 'id' })
     }
     /**
      * Añado a la base de datos 'objeto'. Si todo va bien, avisa al modelo por el callback. Si algo sale mal, muestra por consola el error
@@ -66,7 +68,6 @@ export class Idb {
     buscar(queBusco, callback) {
         const objectStore = this.conexion.transaction(['tabla1'], 'readwrite').objectStore('tabla1')
         const cursor1 = objectStore.openCursor()
-
         cursor1.onerror = (evento) => {
             console.log('No se han cargado los datos');
         }
@@ -149,6 +150,30 @@ export class Idb {
                 callback(cursor.value)
             }
         }
+    }
+    /**
+     * Lee los datos del fichero JSON
+     * @param {Function} callback 
+     */
+    leerFicheroJSON(callback) {
+        $.ajax({
+            url: "data/marcamodelo.json",
+            dataType: "json",
+            type: "GET",
+            success: this.insertarJSON.bind(this)
+        })
+
+    }
+    /**
+     * Si los datos de la bbdd son diferentes, inserta los datos diferentes
+     * @param {Array} data 
+     */
+    insertarJSON(data) {
+        const transaction = this.conexion.transaction(['tabla2'], 'readwrite')
+        const objectStore = transaction.objectStore('tabla2')
+        data.forEach(element => {
+            const peticion = objectStore.add(element)
+        });
     }
 
 }

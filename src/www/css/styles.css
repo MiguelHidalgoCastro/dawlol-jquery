@@ -1,9 +1,9 @@
 /*HEADER*/
-#navbar {
+#logoNav {
     background: #b0b2b469;
 }
 
-#navbar a {
+#logoNav a {
     color: white !important;
 }
 
@@ -11,6 +11,10 @@ body {
     min-width: 300px;
 }
 
-div#vistaCrearCRUD, div#vistaModificarCRUD, div#vistaListaCRUD {
+div#vistaCrearCRUD,
+div#vistaModificarCRUD,
+div#vistaListaCRUD {
     display: none;
 }
+
+

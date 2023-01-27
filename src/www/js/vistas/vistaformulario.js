@@ -48,6 +48,12 @@ export class VistaFormulario extends Vista {
             })
             lector.readAsDataURL(archivo)
         })
+
+        this.autocompletar()
+        this.cambiarSelectEnFab()
+        this.cambiarChecks()
+        this.cambiarInputFecha()
+        this.addtool()
     }
     /**
      * Evento al pulsar el botón aceptar. Recojo todos los datos, los empaqueto y se los doy al controlador
@@ -238,7 +244,7 @@ export class VistaFormulario extends Vista {
         else {
             //los empaqueto
             let coche = new Coche(this.marca.val(), this.modelo.val(), this.fecha.val(), this.enFab.val(), this.descripcion.val(), extras, $('#imagenPrevia').attr('src'))
-          
+
             // los mando al controlador como un objeto coche
             this.controlador.insertarCochePorID(idCoche, coche)
 
@@ -279,5 +285,103 @@ export class VistaFormulario extends Vista {
             this.imagen.prop('disabled', false)
         }
 
+    }
+
+    /** JQUERY UI  */
+
+    /**
+     * Autocompletar marcas coche en el formulario
+     * Sugiere una marca
+     */
+    autocompletar() {
+        let availableTags = [
+            "Mercedes",
+            "Alfa Romeo",
+            "Aston Martin",
+            "Audi",
+            "Autovaz",
+            "Bentley",
+            "Bmw",
+            "Cadillac",
+            "Caterham",
+            "Chevrolet",
+            "Chrysler",
+            "Citroen",
+            "Cupra",
+            "Daihatsu",
+            "Dodge",
+            "Ferrari",
+            "Fiat",
+            "Ford",
+            "Honda",
+            "Hummer",
+            "Hyundai",
+            "Isuzu",
+            "Jaguar",
+            "Jeep",
+            "Kia",
+            "Lamborghini",
+            "Lancia",
+            "Land Rover",
+            "Lexus",
+            "Lotus",
+            "Maserati",
+            "Mazda",
+            "Mercedes Benz",
+            "MG",
+            "Mini",
+            "Mitsubishi",
+            "Morgan",
+            "Nissan",
+            "Opel",
+            "Peugeot",
+            "Porsche",
+            "Renault",
+            "Rolls Royce",
+            "Rover",
+            "Saab",
+            "Seat",
+            "Skoda",
+            "Smart",
+            "Ssangyong",
+            "Subaru",
+            "Suzuki",
+            "Tata",
+            "Toyota",
+            "Volkswagen",
+            "Volvo",
+        ]
+        $('#imarca').autocomplete({ source: availableTags })
+    }
+    /**
+     * Función para cambiar el tipo de select y utilizar el de JQuery UI
+     */
+    cambiarSelectEnFab() {
+        $('#enFab').selectmenu().addClass('form-select col-6')
+    }
+    /**
+     * Cambio el tipo del grupo de los checksbox del formulario por el de JQuery UI
+     */
+    cambiarChecks() {
+        $('#extra1').checkboxradio({ icon: false })
+        $('#extra2').checkboxradio({ icon: false })
+        $('#extra3').checkboxradio({ icon: false })
+        $('#extra4').checkboxradio({ icon: false })
+        $('#extra5').checkboxradio({ icon: false })
+    }
+
+    /**
+     * Cambia los input fecha por los de JQuery UI
+     */
+
+    cambiarInputFecha() {
+        $('#ifecha').datepicker()
+        $('#ifecha').datepicker("option", "showAnim", 'bounce')
+    }
+    /**
+     * Añade un dato al text area para cuando hay mouseover
+     */
+    addtool() {
+        $('#textDescripcion').tooltip()
     }
 }
